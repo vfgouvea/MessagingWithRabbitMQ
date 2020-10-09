@@ -8,7 +8,9 @@ import org.springframework.stereotype.Component;
 public class OrderConsumer {
 
     @RabbitListener(queues = {"${queue.order.name}"})
-    public String receive(@Payload String order) {
+    public String receive(@Payload String order) throws InterruptedException {
+        System.out.println("Consumindo... "+order);
+        Thread.sleep(1000);
         return "Consumido: "+order;
     }
 }

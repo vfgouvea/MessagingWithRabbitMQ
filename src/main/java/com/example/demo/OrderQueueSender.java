@@ -15,6 +15,7 @@ public class OrderQueueSender {
     private Queue queue;
 
     public String send(String order) {
+        System.out.println("Sending..."+order);
         return (String) rabbitTemplate.convertSendAndReceive(this.queue.getName(), order);
     }
 
