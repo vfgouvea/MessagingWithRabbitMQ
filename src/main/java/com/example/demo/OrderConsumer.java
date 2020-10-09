@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class OrderConsumer {
 
     @RabbitListener(queues = {"${queue.order.name}"})
-    public void receive(@Payload String order) {
-        System.out.println("Order recebida");
+    public String receive(@Payload String order) {
+        return "Consumido: "+order;
     }
 }

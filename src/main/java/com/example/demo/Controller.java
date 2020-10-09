@@ -12,8 +12,8 @@ public class Controller {
     OrderQueueSender order;
 
     @PostMapping(value = "msg")
-    private void msg(@RequestBody String value){
-        order.send(value);
+    private String msg(@RequestBody String value){
+        return order.send(value);
     }
 
 }
