@@ -12,7 +12,7 @@ import java.util.List;
 public class Controller {
 
     @Autowired
-    OrderQueueSender order;
+    OrderSender order;
 
     @PostMapping(value = "msg",consumes = "application/json")
     private String msg(@RequestBody List<String> values){
