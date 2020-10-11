@@ -11,7 +11,6 @@ public class QueueConfig {
     @Value("${queue.order.name}")
     private String orderQueue;
 
-
     @Bean
     public Queue queue() {
         return new Queue(orderQueue, true);

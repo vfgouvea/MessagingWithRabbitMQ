@@ -14,7 +14,7 @@ public class OrderSender {
     @Autowired
     private Queue queue;
 
-    public String send(String order) {
+    public String sendAndReceive(String order) {
         System.out.println("Sending..."+order);
         return (String) rabbitTemplate.convertSendAndReceive(this.queue.getName(), order);
     }
