@@ -17,7 +17,7 @@ public class Controller {
     @PostMapping(value = "msg",consumes = "application/json")
     private String msg(@RequestBody List<String> values){
         List<String> saida = new ArrayList<>();
-        values.forEach(value -> saida.add(order.send(value)));
+        values.forEach(value -> saida.add(order.sendAndReceive(value)));
         return saida.toString();
     }
 
